@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		175CC415240E8BC300D6454B /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CC414240E8BC300D6454B /* FeedbackView.swift */; };
+		17A1559C240EAD8700D818C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A1559B240EAD8700D818C2 /* Constants.swift */; };
 		22BF036E23CE3B370031D5BA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF036D23CE3B370031D5BA /* Secrets.swift */; };
 		22FFBBF723C76264001D4C56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFBBF623C76264001D4C56 /* AppDelegate.swift */; };
 		22FFBBF923C76264001D4C56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FFBBF823C76264001D4C56 /* SceneDelegate.swift */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		175CC414240E8BC300D6454B /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		17A15599240EA48000D818C2 /* ubble integration exampleDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ubble integration exampleDebug.entitlements"; sourceTree = "<group>"; };
+		17A1559B240EAD8700D818C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		22BF036D23CE3B370031D5BA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		22FFBBF323C76264001D4C56 /* ubble integration example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ubble integration example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FFBBF623C76264001D4C56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		22FFBBF523C76264001D4C56 /* ubble integration example */ = {
 			isa = PBXGroup;
 			children = (
+				17A15599240EA48000D818C2 /* ubble integration exampleDebug.entitlements */,
 				22FFBBF623C76264001D4C56 /* AppDelegate.swift */,
 				22FFBBF823C76264001D4C56 /* SceneDelegate.swift */,
 				22FFBBFA23C76264001D4C56 /* ContentView.swift */,
@@ -109,6 +115,8 @@
 				22BF036D23CE3B370031D5BA /* Secrets.swift */,
 				22FFBC0423C76268001D4C56 /* Info.plist */,
 				22FFBBFE23C76268001D4C56 /* Preview Content */,
+				175CC414240E8BC300D6454B /* FeedbackView.swift */,
+				17A1559B240EAD8700D818C2 /* Constants.swift */,
 			);
 			path = "ubble integration example";
 			sourceTree = "<group>";
@@ -292,9 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				22FFBBF723C76264001D4C56 /* AppDelegate.swift in Sources */,
+				175CC415240E8BC300D6454B /* FeedbackView.swift in Sources */,
 				22BF036E23CE3B370031D5BA /* Secrets.swift in Sources */,
 				22FFBBF923C76264001D4C56 /* SceneDelegate.swift in Sources */,
 				22FFBBFB23C76264001D4C56 /* ContentView.swift in Sources */,
+				17A1559C240EAD8700D818C2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,16 +469,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ubble integration example/ubble integration exampleDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ubble integration example/Preview Content\"";
-				DEVELOPMENT_TEAM = P7V8KR75ZJ;
+				DEVELOPMENT_TEAM = R69JK2FB34;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "ubble integration example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ubble.ai.ubble-integration-example";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.ubble.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,16 +490,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ubble integration example/ubble integration example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ubble integration example/Preview Content\"";
-				DEVELOPMENT_TEAM = P7V8KR75ZJ;
+				DEVELOPMENT_TEAM = R69JK2FB34;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "ubble integration example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ubble.ai.ubble-integration-example";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.ubble.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
