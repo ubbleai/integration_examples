@@ -17,7 +17,7 @@
         android:layout_marginBottom="201dp"
         android:background="#4b8cf7"
         android:onClick="verifyIdentity"
-        android:text="DEBUG Verify Your Identity"
+        android:text="Verify Your Identity"
         android:textAlignment="gravity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

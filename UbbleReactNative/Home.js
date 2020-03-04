@@ -35,7 +35,6 @@ const generateUbbleIdentification = async () => {
       },
     }),
   });
-  console.log(response);
   const {
     data: {attributes},
   } = await response.json();
