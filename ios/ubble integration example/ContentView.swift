@@ -35,7 +35,7 @@ struct ContentView: View {
 
 struct SafariView: UIViewControllerRepresentable {
     let url: URL
-    
+
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
         return SFSafariViewController(url: url)
     }
@@ -64,7 +64,17 @@ func createIdentification(finished: @escaping ((String) -> Void)) {
     request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
     request.setValue("application/vnd.api+json", forHTTPHeaderField: "Content-Type")
 
-    let json: [String: Any] = ["data": ["type": "identifications", "attributes": ["redirect-url": "ubbleios://"]]]
+    let json: [String: Any] = [
+        "data":
+            [
+                "type": "identifications",
+                "attributes":
+                [
+                    "redirect-url": UBBLE_DEEPLINK
+                ]
+            ]
+        ]
+    
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
     request.httpBody = jsonData

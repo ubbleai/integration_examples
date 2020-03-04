@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, PermissionsAndroid, Text} from 'react-native';
+import {Button, PermissionsAndroid, Linking, Platform} from 'react-native';
 import Base64 from 'base-64';
 import {
   IDENTIFICATION_URL,
@@ -54,11 +54,16 @@ export default class Home extends Component {
     const {navigate} = this.props.navigation;
     const cameraPermissionGranted = await this.requestCameraPermission();
     console.log('Camera permission granted: ', cameraPermissionGranted);
-    const {
-      identificationUrl,
-      redirectUrl,
-    } = await generateUbbleIdentification();
-    navigate('UbbleWebView', {identificationUrl, redirectUrl});
+    try {
+      const {
+        identificationUrl,
+        redirectUrl,
+      } = await generateUbbleIdentification();
+      navigate('UbbleWebView', {identificationUrl, redirectUrl});
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
   }
 
   async requestCameraPermission() {
@@ -71,6 +76,20 @@ export default class Home extends Component {
       console.warn(err);
     }
   }
+
+  componentDidMount() {
+    if (Platform.OS === 'android') {
+      Linking.getInitialURL().then(url => {
+        console.log(url);
+      });
+    } else {
+      Linking.addEventListener('url', this.handleOpenUrl);
+    }
+  }
+
+  handleOpenUrl = event => {
+    console.log(event.url);
+  };
 
   render() {
     return (
