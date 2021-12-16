@@ -8,6 +8,10 @@ export default class UbbleWebView extends Component {
 
   render() {
     const {identificationUrl} = this.props.navigation.state.params;
-    return <WebView source={{uri: identificationUrl}} />;
+    // allowsInlineMediaPlayback is required for the streaming to work in iOS
+    // See https://github.com/react-native-webview/react-native-webview/blob/master/docs/Reference.md#allowsinlinemediaplayback
+    return (
+      <WebView source={{uri: identificationUrl}} allowsInlineMediaPlayback />
+    );
   }
 }
