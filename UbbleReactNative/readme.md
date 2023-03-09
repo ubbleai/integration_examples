@@ -50,3 +50,26 @@ In order to run the app, you need to grant the following permissions on Android 
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />
 ```
+
+
+### Expo
+
+In case you are using Expo for your application, you should add the following lines to the `app.json` 
+file to ensure that the permissions are correctly granted.
+
+For Android:
+```
+"android": {
+    "permissions": ["android.permission.CAMERA"]
+}
+```
+And for iOS:
+```
+"ios": {
+    "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera"
+    }
+}
+```
+
+Please note that you need to run ```expo prebuild``` for the permissions to be correctly granted.
